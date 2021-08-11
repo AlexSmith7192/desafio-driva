@@ -8,7 +8,7 @@ print('\nColunas da tabela DadosEmpresa.csv: \n', columnsDe)
 firstLines = de.head(10)
 print('\n10 primeiras linhas da tabela DadosEmpresa.csv: \n', firstLines)
 
-optionsSimplemSum = de.query('opcao_pelo_simples == "SIM"').count().value_counts()
+optionsSimplemSum = de.query('opcao_pelo_simples == "SIM"').count().iloc[[4]]
 print('\nQuantidade de empresas que optam pelo simples: \n', optionsSimplemSum)
 
 sumShareCapital = de.sum().iloc[[5]]
