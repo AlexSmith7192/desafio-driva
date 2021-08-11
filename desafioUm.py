@@ -18,3 +18,8 @@ filterCapitalSocial = dEmp.query('capital_social > 10000 & capital_social < 2000
 print('\nEmpresas que tem capital social maior que 10.000 e menor que 20.000: \n', filterCapitalSocial)
 
 dEnd = pd.read_csv('DadosEndereco.csv')
+
+mergeDatas = pd.merge(dEmp, dEnd)
+empCuritiba = mergeDatas.query('municipio == "CURITIBA"')
+empCuritiba.to_csv(path_or_buf='DadosEmpresasCuritiba.csv' ,index=False)
+
